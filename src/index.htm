@@ -12,15 +12,32 @@
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
-  <title>Hello app</title>
+  <title>Temperature</title>
 </head>
 
 <body>
-  <h1>Hello</h1>
+  <h1>How many had a high temparture?</h1>
   <div id="app">
-    <input v-model="name" placeholder="Name">
-    <button v-on:click="sayHello()" class="btn btn-primary">Say hello</button>
-    <div>{{ greeting }}</div>
+    <h2>Get All tests (GET)</h2>
+    <button id="getAllButton" v-on:click="getAllTests" class="btn btn-primary">Get all tests</button>
+
+    <ul id="coronaTestList" v-if="tests.length">
+      <li v-for="coronaTest in tests">
+        {{coronaTest.testId}} {{coronaTest.machineName}} : {{coronaTest.temperature}} {{coronaTest.location}} : {{coronaTest.date}} {{coronaTest.time}}
+      </li>
+    </ul>
+    <div v-else>No tests</div>
+
+    <h2>Get Tests with high temperature (GET)</h2>
+    <button id="getWithHighTemperatureButton" v-on:click="getAllWithTemperature()" class="btn btn-primary">Get all with high temperature</button>
+    
+    <ul id="coronaTestList" v-if="tests.length">
+      <li v-for="coronaTest in tests">
+        {{coronaTest.testId}} {{coronaTest.machineName}} : {{coronaTest.temperature}} {{coronaTest.location}} : {{coronaTest.date}} {{coronaTest.time}}
+      </li>
+    </ul>
+    <div v-else>No tests</div>
+
   </div>
 
   <script src="bundle.js"></script>
