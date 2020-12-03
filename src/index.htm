@@ -29,14 +29,18 @@
     <div v-else>No tests</div>
 
     <h2>Get Tests with high temperature (GET)</h2>
-    <button id="getWithHighTemperatureButton" v-on:click="getAllWithTemperature()" class="btn btn-primary">Get all with high temperature</button>
+    <button id="getWithHighTemperatureButton" v-on:click="getAllWithHighTemperature" class="btn btn-primary">Get all with high temperature</button>
     
-    <ul id="coronaTestList" v-if="tests.length">
-      <li v-for="coronaTest in tests">
+    <ul id="coronaTestList" v-if="highTemp.length">
+      <li v-for="coronaTest in highTemp">
         {{coronaTest.testId}} {{coronaTest.machineName}} : {{coronaTest.temperature}} {{coronaTest.location}} : {{coronaTest.date}} {{coronaTest.time}}
       </li>
     </ul>
     <div v-else>No tests</div>
+
+    {{ highTemp.length }}
+
+    {{ highTemp.length / tests.length }}
 
   </div>
 
