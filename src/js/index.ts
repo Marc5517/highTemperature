@@ -44,9 +44,6 @@ new Vue({
         getAllWithHighTemperature() {
             let url = baseUrl + "/temperature"
             this.helperGetAndShow(url)
-        },
-        showPercentage() {
-
         }
     }
 

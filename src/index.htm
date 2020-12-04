@@ -38,9 +38,9 @@
     </ul>
     <div v-else>No tests</div>
 
-    {{ highTemp.length }}
+    <h4>Antal: {{ highTemp.length }}</h4>
 
-    {{ highTemp.length / tests.length }}
+    <h4>Hvor mange i procent har høj temperatur: {{ highTemp.length / tests.length * 100 }}%</h4>
 
   </div>
 
